@@ -1,28 +1,40 @@
-// frontend/src/components/nodes/BaseNode.jsx
-
 import { Handle } from "reactflow";
 import "./BaseNode.css";
 
-export const BaseNode = ({ title, handles = [], children }) => {
+export const BaseNode = ({
+  id,
+  title,
+  icon,
+  variant = "default",
+  handles = [],
+  width,
+  height,
+  children,
+}) => {
   return (
-    <div className="base-node">
-      <div className="base-node__header">
-        <span>{title}</span>
-      </div>
-
-      <div className="base-node__content">
-        {children}
-      </div>
-
+    <div
+      className={`base-node ${variant}`}
+      style={{
+        width,
+        height,
+      }}
+    >
       {handles.map((handle) => (
         <Handle
-          key={handle.id}
+          key={handle.key}
+          id={`${id}-${handle.key}`}
           type={handle.type}
           position={handle.position}
-          id={handle.id}
           style={handle.style}
         />
       ))}
+
+      <div className="base-node-header">
+        {icon && <span className="node-icon">{icon}</span>}
+        <span className="node-title">{title}</span>
+      </div>
+
+      <div className="base-node-content">{children}</div>
     </div>
   );
 };

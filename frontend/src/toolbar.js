@@ -1,17 +1,19 @@
-// toolbar.js
-
-import { DraggableNode } from './draggableNode';
+import { DraggableNode } from "./draggableNode";
+import { nodeRegistry } from "./config/nodeRegistry";
 
 export const PipelineToolbar = () => {
+  return (
+    <div className="toolbar">
+      <div className="toolbar-header">
+        <h2 className="toolbar-title">🧩 Pipeline Nodes</h2>
+        <p className="toolbar-subtitle">Drag & drop nodes onto the canvas</p>
+      </div>
 
-    return (
-        <div style={{ padding: '10px' }}>
-            <div style={{ marginTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                <DraggableNode type='customInput' label='Input' />
-                <DraggableNode type='llm' label='LLM' />
-                <DraggableNode type='customOutput' label='Output' />
-                <DraggableNode type='text' label='Text' />
-            </div>
-        </div>
-    );
+      <div className="toolbar-grid">
+        {nodeRegistry.map((node) => (
+          <DraggableNode key={node.type} type={node.type} label={node.label} icon={node.icon} />
+        ))}
+      </div>
+    </div>
+  );
 };

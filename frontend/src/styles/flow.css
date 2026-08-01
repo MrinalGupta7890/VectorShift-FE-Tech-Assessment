@@ -1,0 +1,46 @@
+.pipeline-container {
+  position: relative;
+  width: 100%;
+  height: 72vh;
+}
+
+.react-flow {
+  background: #f8fafc;
+}
+
+.react-flow__controls {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.react-flow__minimap {
+  border-radius: 12px;
+}
+
+.empty-canvas {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.empty-canvas-content {
+  text-align: center;
+  color: #94a3b8;
+}
+
+.empty-canvas-arrow {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.empty-canvas-content h3 {
+  margin-bottom: 6px;
+  color: #475569;
+}
+
+.empty-canvas-content p {
+  font-size: 14px;
+}

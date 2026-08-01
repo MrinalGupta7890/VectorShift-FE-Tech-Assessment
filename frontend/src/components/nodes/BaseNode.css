@@ -1,24 +1,197 @@
 .base-node {
-  position: relative;
-  min-width: 220px;
+  width: 260px;
   min-height: 120px;
   background: #ffffff;
-  border: 1px solid #d0d7de;
-  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
   overflow: hidden;
-  box-sizing: border-box;
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.05),
+    0 2px 6px rgba(15, 23, 42, 0.04);
+
+  animation: fadeIn .25s ease;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+  
 }
 
-.base-node__header {
-  padding: 10px 14px;
-  border-bottom: 1px solid #e5e7eb;
+.base-node:hover {
+  transform: translateY(-2px);
+
+  border-color: #4f46e5;
+
+  box-shadow: 0 12px 22px rgba(79, 70, 229, 0.15);
+}
+
+.base-node-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 16px;
   font-weight: 600;
   font-size: 14px;
+  border-bottom: 1px solid;
 }
 
-.base-node__content {
-  padding: 12px 14px;
+.base-node-header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 10px;
+}
+
+.node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.node-title {
+  font-weight: 600;
+}
+
+.base-node.input .base-node-header {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.base-node.output .base-node-header {
+  background: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.base-node.llm .base-node-header {
+  background: #ede9fe;
+  color: #6d28d9;
+  border-color: #ddd6fe;
+}
+
+.base-node.text .base-node-header {
+  background: #ccfbf1;
+  color: #0f766e;
+  border-color: #99f6e4;
+}
+
+.base-node.api .base-node-header {
+  background: #cffafe;
+  color: #0e7490;
+  border-color: #a5f3fc;
+}
+
+.base-node.database .base-node-header {
+  background: #e2e8f0;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+
+.base-node.filter .base-node-header {
+  background: #e0e7ff;
+  color: #4338ca;
+  border-color: #c7d2fe;
+}
+
+.base-node.email .base-node-header {
+  background: #ffedd5;
+  color: #c2410c;
+  border-color: #fed7aa;
+}
+
+.base-node.delay .base-node-header {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+.base-node-content {
+  padding: 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.base-node-content label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #475569;
+}
+
+.base-node-content span {
+  font-size: 13px;
+
+  color: #475569;
+}
+
+.base-node-content input,
+.base-node-content select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 13px;
+}
+
+.base-node-content textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #dbe3ef;
+  border-radius: 8px;
+  background: #fafafa;
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1.5;
+  resize: none;
+}
+
+.base-node-content input:focus,
+.base-node-content select:focus,
+.base-node-content textarea:focus {
+  border-color: #4f46e5;
+
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+
+  outline: none;
+}
+
+.react-flow__handle {
+  width: 12px;
+  height: 12px;
+
+  background: #4f46e5;
+
+  border: 2px solid white;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
