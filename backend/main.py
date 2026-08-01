@@ -3,10 +3,18 @@ from fastapi.middleware.cors import CORSMiddleware
 from graph_utils import is_dag
 from schemas import Pipeline
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 app = FastAPI()
+
+frontend_url = os.getenv("FRONTEND_URL", "http://localhost:3000")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=[frontend_url],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
