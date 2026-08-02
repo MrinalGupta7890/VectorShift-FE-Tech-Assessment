@@ -171,17 +171,20 @@
   outline: none;
 }
 
-.react-flow__handle {
-  width: 12px;
-  height: 12px;
-
+.base-node .react-flow__handle {
+  width: 14px;
+  height: 14px;
   background: #4f46e5;
-
-  border: 2px solid white;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 1px #4f46e5;
+  transition: all 0.2s ease;
+  cursor: crosshair;
 }
 
-.react-flow__handle:hover {
-  transform: scale(1.2);
+.base-node .react-flow__handle:hover {
+  transform: scale(1.4);
+  background: #4338ca;
+  box-shadow: 0 0 0 2px #4338ca;
 }
 
 @keyframes fadeIn {
