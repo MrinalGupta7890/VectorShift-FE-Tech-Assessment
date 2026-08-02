@@ -1,5 +1,3 @@
-// frontend/src/config/nodeRegistry.js
-
 import { InputNode } from "../nodes/inputNode";
 import { OutputNode } from "../nodes/outputNode";
 import { LLMNode } from "../nodes/llmNode";

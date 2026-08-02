@@ -25,10 +25,9 @@ export const SubmitButton = () => {
 
       alert(
         `Pipeline Analysis
-
-Nodes: ${result.num_nodes}
-Edges: ${result.num_edges}
-Is DAG: ${result.is_dag ? "Yes ✅" : "No ❌"}`
+        Nodes: ${result.num_nodes}
+        Edges: ${result.num_edges}
+        Is DAG: ${result.is_dag ? "Yes ✅" : "No ❌"}`,
       );
     } catch (error) {
       console.error(error);
@@ -39,10 +38,7 @@ Is DAG: ${result.is_dag ? "Yes ✅" : "No ❌"}`
 
   return (
     <div className="submit-container">
-      <button
-        className="submit-button"
-        onClick={handleSubmit}
-      >
+      <button className="submit-button" onClick={handleSubmit}>
         Submit
       </button>
     </div>
