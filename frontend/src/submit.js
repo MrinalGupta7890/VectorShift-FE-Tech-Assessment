@@ -43,7 +43,7 @@ Is DAG: ${result.is_dag ? "Yes ✅" : "No ❌"}`
         className="submit-button"
         onClick={handleSubmit}
       >
-        🚀 Submit
+        Submit
       </button>
     </div>
   );
